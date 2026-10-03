@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="gu" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOIE Salon | Hair • Skin • Bridal | Rajkot</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#0a090c',
+              card: '#141218',
+              gold: '#d4af37',
+              goldLight: '#f5e7c8',
+              accent: '#221e28'
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #fcedd8 0%, #d4af37 50%, #996d13 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glass-nav {
+      background: rgba(10, 9, 12, 0.88);
+      backdrop-filter: blur(14px);
+    }
+    
+    /* Infinite Smooth Slider Animation */
+    @keyframes marqueeLeft {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes marqueeRight {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0%); }
+    }
+    .animate-marquee-left {
+      display: flex;
+      width: 200%;
+      animation: marqueeLeft 35s linear infinite;
+    }
+    .animate-marquee-right {
+      display: flex;
+      width: 200%;
+      animation: marqueeRight 35s linear infinite;
+    }
+    .marquee-container:hover .animate-marquee-left,
+    .marquee-container:hover .animate-marquee-right {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body class="bg-brand-dark text-gray-200 font-sans antialiased selection:bg-brand-gold selection:text-black">
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-white/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
+      <a href="#home" class="flex items-center space-x-2">
+        <span class="font-serif text-3xl font-bold tracking-widest gold-gradient-text">JOIE</span>
+        <span class="text-xs uppercase tracking-widest text-gray-400 font-light hidden sm:inline-block">| Salon Studio</span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8 text-xs tracking-[0.2em] uppercase text-gray-300">
+        <a href="#home" class="hover:text-brand-gold transition">Home</a>
+        <a href="#services" class="hover:text-brand-gold transition">Services</a>
+        <a href="#portfolio" class="hover:text-brand-gold transition">Portfolio</a>
+        <a href="#contact" class="hover:text-brand-gold transition">Studio</a>
+      </div>
+
+      <div class="hidden md:block">
+        <a href="https://wa.me/919624596903?text=Hello%20JOIE%20Salon,%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" class="px-6 py-2.5 rounded-full border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black text-xs uppercase tracking-widest font-semibold transition duration-300 shadow-lg shadow-brand-gold/10">
+          Book Appointment
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="mobileMenuBtn" class="md:hidden text-2xl text-brand-gold focus:outline-none">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden bg-brand-card/95 border-b border-white/10 px-6 py-6 space-y-4 text-center">
+      <a href="#home" onclick="toggleMenu()" class="block py-2 uppercase tracking-widest hover:text-brand-gold text-sm">Home</a>
+      <a href="#services" onclick="toggleMenu()" class="block py-2 uppercase tracking-widest hover:text-brand-gold text-sm">Services</a>
+      <a href="#portfolio" onclick="toggleMenu()" class="block py-2 uppercase tracking-widest hover:text-brand-gold text-sm">Portfolio</a>
+      <a href="#contact" onclick="toggleMenu()" class="block py-2 uppercase tracking-widest hover:text-brand-gold text-sm">Studio</a>
+      <a href="https://wa.me/919624596903?text=Hello%20JOIE%20Salon,%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" class="block w-full py-3 mt-2 rounded-full bg-brand-gold text-black uppercase font-bold text-xs tracking-wider">Book On WhatsApp</a>
+    </div>
+  </nav>
+
+  <!-- ================= 1. HOME (HERO SECTION) ================= -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-yellow-900/20 via-brand-dark to-brand-dark opacity-80 z-0"></div>
+    
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <span class="inline-block py-1 px-4 mb-5 rounded-full border border-brand-gold/30 bg-brand-gold/10 text-brand-goldLight text-xs tracking-[0.3em] uppercase">
+        Where Beauty Meets Expertise ✨[cite: 1]
+      </span>
+      <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+        Redefining Elegance with <br>
+        <span class="gold-gradient-text italic font-serif">JOIE Luxury Salon</span>
+      </h1>
+      <p class="max-w-2xl mx-auto text-gray-300 text-sm sm:text-base mb-10 font-light leading-relaxed">
+        Rajkot's bespoke destination for signature layered haircuts, reviving hair spas, glowing skin aesthetics, and couture bridal styling[cite: 1, 3].
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://wa.me/919624596903?text=Hello%20JOIE%20Salon,%20I%20want%20to%20reserve%20a%20slot." target="_blank" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-brand-gold to-yellow-600 text-black font-semibold text-xs tracking-widest uppercase shadow-xl hover:opacity-90 transition">
+          Instant Booking
+        </a>
+        <a href="#portfolio" class="w-full sm:w-auto px-8 py-3.5 rounded-full border border-white/20 hover:border-brand-gold text-white font-medium text-xs tracking-widest uppercase transition">
+          View Live Portfolio
+        </a>
+      </div>
+
+      <!-- Highlight Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-10 border-t border-white/10 text-left">
+        <div>
+          <div class="text-brand-gold text-xl font-serif font-bold">Jay Bagthriya</div>
+          <div class="text-xs text-gray-400 mt-1">Founder & Lead Stylist[cite: 1]</div>
+        </div>
+        <div>
+          <div class="text-brand-gold text-xl font-serif font-bold">5.0 ★ Rating</div>
+          <div class="text-xs text-gray-400 mt-1">Customer Trusted</div>
+        </div>
+        <div>
+          <div class="text-brand-gold text-xl font-serif font-bold">Premium Care</div>
+          <div class="text-xs text-gray-400 mt-1">Global Product Lines</div>
+        </div>
+        <div>
+          <div class="text-brand-gold text-xl font-serif font-bold">Crystal Mall Area</div>
+          <div class="text-xs text-gray-400 mt-1">Jyotinagar, Rajkot[cite: 1]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 2. SERVICES ================= -->
+  <section id="services" class="py-24 bg-brand-card/30 border-t border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-brand-gold text-xs uppercase tracking-[0.3em] font-medium">Bespoke Treatments</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2 mb-4">Our Salon Services</h2>
+        <div class="w-16 h-0.5 bg-brand-gold mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-brand-card border border-white/10 hover:border-brand-gold/60 p-8 rounded-2xl transition duration-300 hover:-translate-y-1.5 shadow-xl">
+          <div class="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold text-xl mb-6">
+            <i class="fa-solid fa-scissors"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-white mb-2">Hair Architecture</h3>
+          <p class="text-gray-400 text-xs mb-6">Personalized feather cuts, curtain bangs, volume layers, and hair Botox therapy[cite: 1, 2].</p>
+          <ul class="space-y-3 border-t border-white/10 pt-4 text-xs">
+            <li class="flex justify-between items-center text-gray-300">
+              <span>Signature Haircut & Styling</span>
+              <span class="text-brand-gold font-semibold">Custom</span>
+            </li>
+            <li class="flex justify-between items-center text-gray-300">
+              <span>Relaxing Hair Spa</span>
+              <span class="text-brand-gold font-semibold">₹499+</span>[cite: 3]
+            </li>
+            <li class="flex justify-between items-center text-gray-300">
+              <span>Highlights / Balayage</span>
+              <span class="text-brand-gold font-semibold">Available</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-brand-card border-2 border-brand-gold/40 hover:border-brand-gold p-8 rounded-2xl transition duration-300 hover:-translate-y-1.5 shadow-2xl relative">
+          <span class="absolute -top-3.5 right-6 px-3 py-1 bg-brand-gold text-black text-[10px] font-bold uppercase tracking-widest rounded-full">Popular</span>
+          <div class="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold text-xl mb-6">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-white mb-2">Skin & Glow Rituals</h3>
+          <p class="text-gray-400 text-xs mb-6">Targeted D-Tan rituals, rejuvenating deep cleanses, and body massage packages[cite: 3].</p>
+          <ul class="space-y-3 border-t border-white/10 pt-4 text-xs">
+            <li class="flex justify-between items-center text-gray-300">
+              <span>D-Tan Facial Therapy</span>
+              <span class="text-brand-gold font-semibold">₹799+</span>[cite: 3]
+            </li>
+            <li class="flex justify-between items-center text-gray-300">
+              <span>Body Relaxation Massage</span>
+              <span class="text-brand-gold font-semibold">₹599+</span>[cite: 3]
+            </li>
+            <li class="flex justify-between items-center text-gray-300">
+              <span>Manicure & Pedicure</span>
+              <span class="text-brand-gold font-semibold">₹499+</span>[cite: 3]
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-brand-card border border-white/10 hover:border-brand-gold/60 p-8 rounded-2xl transition duration-300 hover:-translate-y-1.5 shadow-xl">
+          <div class="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold text-xl mb-6">
+            <i class="fa-solid fa-gem"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-white mb-2">Bridal & Glamour</h3>
+          <p class="text-gray-400 text-xs mb-6">Unforgettable bridal look tailored to complement your wedding attire and theme[cite: 1].</p>
+          <ul class="space-y-3 border-t border-white/10 pt-4 text-xs">
+            <li class="flex justify-between items-center text-gray-300">
+              <span>Couture Bridal Makeup</span>
+              <span class="text-brand-gold font-semibold">Exclusive</span>
+            </li>
+            <li class="flex justify-between items-center text-gray-300">
+              <span>Engagement / Sangeet Look</span>
+              <span class="text-brand-gold font-semibold">Custom</span>
+            </li>
+            <li class="flex justify-between items-center text-gray-300">
+              <span>Permanent Blowdry / Styling</span>
+              <span class="text-brand-gold font-semibold">₹1150+</span>[cite: 3]
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3. AUTO-MOVING LUXURY PORTFOLIO ================= -->
+  <section id="portfolio" class="py-24 overflow-hidden relative">
+    <div class="max-w-7xl mx-auto px-6 mb-12 flex flex-col md:flex-row md:items-end justify-between">
+      <div>
+        <span class="text-brand-gold text-xs uppercase tracking-[0.3em] font-medium">Visual Gallery</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">Signature Showcase</h2>
+      </div>
+      <p class="text-xs text-gray-400 mt-3 md:mt-0 tracking-widest uppercase">
+        Hover to Pause • Auto-Smooth Scrolling
+      </p>
+    </div>
+
+    <!-- Marquee Track Row 1 (Moves Left) -->
+    <div class="marquee-container w-full overflow-hidden mb-6">
+      <div class="animate-marquee-left space-x-6 px-3">
+        <!-- Slide 1 -->
+        <div class="w-72 sm:w-80 h-96 flex-shrink-0 rounded-2xl overflow-hidden relative group border border-white/10 shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-5">
+            <span class="text-brand-gold text-[10px] uppercase tracking-widest font-semibold">JOIE Signature</span>
+            <h4 class="font-serif text-lg text-white font-bold">Feather Layered Waves</h4>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="w-72 sm:w-80 h-96 flex-shrink-0 rounded-2xl overflow-hidden relative group border border-white/10 shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-5">
+            <span class="text-brand-gold text-[10px] uppercase tracking-widest font-semibold">Color Art</span>
+            <h4 class="font-serif text-lg text-white font-bold">Caramel Balayage</h4>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="w-72 sm:w-80 h-96 flex-shrink-0 rounded-2xl overflow-hidden relative group border border-white/10 shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-5">
+            <span class="text-brand-gold text-[10px] uppercase tracking-widest font-semibold">Bridal Glam</span>
+            <h4 class="font-serif text-lg text-white font-bold">HD Natural Radiance</h4>
+          </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="w-72 sm:w-80 h-96 flex-shrink-0 rounded-2xl overflow-hidden relative group border border-white/10 shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=800&q=80" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-5">
+            <span class="text-brand-gold text-[10px] uppercase tracking-widest font-semibold">Hair Therapy</span>
+            <h4 class="font-serif text-lg text-white font-bold">Keratin Glass Finish</h4>
+          </div>
+        </div>
+        <!-- Duplicate Set For Loop Seamlessness -->
+        <div class="w-72 sm:w-80 h-96 flex-shrink-0 rounded-2xl overflow-hidden relative group border border-white/10 shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-5">
+            <span class="text-brand-gold text-[10px] uppercase tracking-widest font-semibold">JOIE Signature</span>
+            <h4 class="font-serif text-lg text-white font-bold">Feather Layered Waves</h4>
+          </div>
+        </div>
+        <div class="w-72 sm:w-80 h-96 flex-shrink-0 rounded-2xl overflow-hidden relative group border border-white/10 shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-5">
+            <span class="text-brand-gold text-[10px] uppercase tracking-widest font-semibold">Color Art</span>
+            <h4 class="font-serif text-lg text-white font-bold">Caramel Balayage</h4>
+          </div>
+        </div>
+        <div class="w-72 sm:w-80 h-96 flex-shrink-0 rounded-2xl overflow-hidden relative group border border-white/10 shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-5">
+            <span class="text-brand-gold text-[10px] uppercase tracking-widest font-semibold">Bridal Glam</span>
+            <h4 class="font-serif text-lg text-white font-bold">HD Natural Radiance</h4>
+          </div>
+        </div>
+        <div class="w-72 sm:w-80 h-96 flex-shrink-0 rounded-2xl overflow-hidden relative group border border-white/10 shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=800&q=80" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-5">
+            <span class="text-brand-gold text-[10px] uppercase tracking-widest font-semibold">Hair Therapy</span>
+            <h4 class="font-serif text-lg text-white font-bold">Keratin Glass Finish</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. STUDIO LOCATION & DETAILS ================= -->
+  <section id="contact" class="py-24 bg-brand-card/50 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <div>
+          <span class="text-brand-gold text-xs uppercase tracking-[0.3em] font-medium">Studio Experience</span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2 mb-6">Visit JOIE Salon</h2>
+          <p class="text-gray-400 text-sm mb-8 leading-relaxed">
+            Experience our relaxing modern salon studio in the heart of Rajkot. Reach us directly for appointments, consultations, or queries[cite: 1].
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold flex-shrink-0">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Address</h4>
+                <p class="text-gray-400 text-xs sm:text-sm mt-1">
+                  JOIE - Jyotinagar Main Road, Near Masoom School, Behind Crystal Mall, Ghanshyam Nagar, Rajkot, Gujarat - 360005[cite: 1]
+                </p>
+                <a href="https://maps.app.goo.gl/dzWjdtqJzYvwt5Mj7" target="_blank" class="inline-block mt-2 text-xs text-brand-gold font-semibold tracking-wider hover:underline">
+                  Open In Google Maps →
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold flex-shrink-0">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Direct WhatsApp</h4>
+                <p class="text-gray-400 text-sm mt-1">+91 96245 96903</p>[cite: 1, 3]
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold flex-shrink-0">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Instagram Portfolio</h4>
+                <a href="https://instagram.com/joiesalonrajkot" target="_blank" class="text-brand-gold text-sm mt-1 block hover:underline">
+                  @joiesalonrajkot[cite: 1]
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Luxury Booking CTA Card -->
+        <div class="bg-gradient-to-br from-brand-card to-brand-accent p-10 rounded-3xl border border-brand-gold/30 text-center shadow-2xl relative">
+          <div class="w-16 h-16 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center mx-auto text-2xl mb-6">
+            <i class="fa-solid fa-crown"></i>
+          </div>
+          <h3 class="font-serif text-3xl font-bold text-white mb-3">Ready for a Makeover?</h3>
+          <p class="text-gray-300 text-xs sm:text-sm mb-8 leading-relaxed">
+            Prioritize your personal care with our master stylists. Connect on WhatsApp for priority booking and hair consultations.
+          </p>
+          <a href="https://wa.me/919624596903?text=Hello%20JOIE%20Salon,%20I%20want%20to%20consult%20and%20book%20an%20appointment." target="_blank" class="inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-brand-gold text-black font-bold text-xs uppercase tracking-widest shadow-xl hover:opacity-95 transition">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>Chat On WhatsApp</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="py-10 bg-brand-dark border-t border-white/10 text-center text-xs text-gray-500">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="font-serif text-2xl font-bold tracking-widest gold-gradient-text mb-2">JOIE SALON</div>
+      <p class="mb-4">Where Beauty Meets Expertise • Jay Bagthriya[cite: 1]</p>
+      <p>© 2026 JOIE Salon, Rajkot. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Floating Sticky WhatsApp -->
+  <div class="fixed bottom-6 right-6 z-40">
+    <a href="https://wa.me/919624596903?text=Hello%20JOIE%20Salon,%20I%20have%20an%20inquiry." target="_blank" class="w-14 h-14 rounded-full bg-emerald-600 text-white flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300">
+      <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+  </div>
+
+  <script>
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    function toggleMenu() {
+      mobileMenu.classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
